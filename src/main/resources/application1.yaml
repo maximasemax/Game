@@ -1,0 +1,12 @@
+- name: "Bomgic"
+  hp: 100
+  attackSkill: 2
+  defenceSkill: 4
+- name: "Magor"
+  hp: 100
+  attackSkill: 3
+  defenceSkill: 5
+- name: "Gey"
+  hp: 100
+  attackSkill: 1
+  defenceSkill: 1

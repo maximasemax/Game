@@ -66,14 +66,15 @@ public class MenuService implements MenuServiceOption {
         messageService.showCommandsInRuleMenuMessage();
         Scanner scanner = new Scanner(System.in);
         int command = scanner.nextInt();
-        if (command == 1){
+        if (command == 1) {
             tryStart();
         }
-        if (command == 2){
+        if (command == 2) {
             exitGame();
         }
+
     }
 }
 
 
-// TODO РРЅС‚РµСЂС„РµСЃС‹ Рё СЃРѕР·РґР°С‚СЊ РєР»Р°СЃСЃС‹ РјРµСЃРµРґР¶ СЃРµСЂРІРёСЃ , СЂР°СЃРєРёРЅСѓС‚СЊ РїРѕ РїР°РєРµС‚Р°Рј , Рё СЃРґРµР»Р°С‚СЊ РґСЂСѓРіРѕР№ С†РёРєР»
+// TODO Интерфесы и создать классы меседж сервис , раскинуть по пакетам , и сделать другой цикл

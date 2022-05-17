@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 public class MessageService implements MessageServiceOption {
 
 
+
     @Override
     public String getMessage(String fileName) throws Exception {
         return new String(Files.readAllBytes(Paths.get(fileName)));

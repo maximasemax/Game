@@ -1,5 +1,5 @@
-Правила:
-В начале игры выбирается персанаж из предложенных.
-После чего выбирается оружие.
-Противник выбирает персонажа и оружие автоматически.
-ПОбеждает тот кто выйграет. ХЕХЕ
+Rules:
+At the beginning of the game, a character is selected from the proposed ones.
+Then a weapon is selected.
+The enemy selects the character and weapon automatically.
+The one who wins wins. HEHE

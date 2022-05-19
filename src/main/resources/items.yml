@@ -1,0 +1,14 @@
+name: "max"
+items:
+- name: "Knife"
+  damageSkill: 3
+  defenceSkill: 2
+- name: "Bulava"
+  damageSkill: 5
+  defenceSkill: 1
+- name: "Pistol"
+  damageSkill: 7
+  defenceSkill: 0
+- name: "Sword"
+  damageSkill: 5
+  defenceSkill: 3

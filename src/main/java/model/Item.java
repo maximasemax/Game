@@ -11,6 +11,9 @@ public class Item {
         this.defenceSkill = defenceSkill;
     }
 
+    public Item() {
+    }
+
     public int getDefenceSkill() {
         return defenceSkill;
     }
@@ -37,10 +40,13 @@ public class Item {
 
     @Override
     public String toString() {
-        return "model.Item{" +
-                "name='" + name + '\'' +
-                ", damageSkill=" + damageSkill +
-                ", defenceSkill=" + defenceSkill +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(name);
+        stringBuilder.append("\n");
+        stringBuilder.append(damageSkill);
+        stringBuilder.append("\n");
+        stringBuilder.append(defenceSkill);
+        stringBuilder.append("\n");
+        return stringBuilder.toString();
     }
 }

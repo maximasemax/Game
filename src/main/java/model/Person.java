@@ -6,11 +6,15 @@ public class Person {
     public float attackSkill;
     public float defenceSkill;
 
+
     public Person(String name, float hp, float attackSkill, float defenceSkill) {
         this.name = name;
         this.attackSkill = attackSkill;
         this.defenceSkill = defenceSkill;
         this.hp = hp;
+    }
+
+    public Person() {
     }
 
     public float getAttackSkill() {

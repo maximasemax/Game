@@ -2,22 +2,28 @@ package service;
 
 import model.Fight;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 
 public class MenuService implements MenuServiceOption {
 
+    private final MessageServiceOption messageService = new MessageService();
+    private final Scanner scanner = new Scanner(System.in);
 
     public void startMenuService() throws Exception {
-        MessageService messageService = new MessageService();
         messageService.showStartMessage();
-        tryStart();
+        start();
 
     }
 
     @Override
-    public void startGame(int command) {
+    public void startGame(int command) throws IOException {
         if (command == 2) {
+            PersonService personService = new PersonService();
+            personService.chosePerson();
+            ItemService itemService = new ItemService();
+            itemService.choseItem();
             Fight fight = new Fight();
 //          fight.fight();
         }
@@ -26,7 +32,6 @@ public class MenuService implements MenuServiceOption {
     @Override
     public void endGame(int command) throws Exception {
         if (command == 3) {
-            MessageService messageService = new MessageService();
             messageService.showEndMessage();
             exitGame();
         }
@@ -35,7 +40,6 @@ public class MenuService implements MenuServiceOption {
     @Override
     public void ruleMenu(int command) throws Exception {
         if (command == 1) {
-            MessageService messageService = new MessageService();
             messageService.showRulesMenu();
             exitFromRuleMenu();
         }
@@ -43,16 +47,16 @@ public class MenuService implements MenuServiceOption {
     }
 
     @Override
-    public void exitGame() throws Exception {
+    public void exitGame() {
         System.exit(0);
     }
 
-    public void tryStart() throws Exception {
-        MessageService messageService = new MessageService();
+    public void start() throws Exception {
         messageService.showCommandsMessage();
-        Scanner scanner = new Scanner(System.in);
         int command = scanner.nextInt();
+
         try {
+            // Сделать switch
             ruleMenu(command);
             startGame(command);
             endGame(command);
@@ -62,12 +66,10 @@ public class MenuService implements MenuServiceOption {
     }
 
     public void exitFromRuleMenu() throws Exception {
-        MessageService messageService = new MessageService();
         messageService.showCommandsInRuleMenuMessage();
-        Scanner scanner = new Scanner(System.in);
         int command = scanner.nextInt();
         if (command == 1) {
-            tryStart();
+            start();
         }
         if (command == 2) {
             exitGame();
@@ -75,6 +77,3 @@ public class MenuService implements MenuServiceOption {
 
     }
 }
-
-
-// TODO Интерфесы и создать классы меседж сервис , раскинуть по пакетам , и сделать другой цикл

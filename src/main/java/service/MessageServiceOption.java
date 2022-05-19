@@ -1,5 +1,9 @@
 package service;
 
 public interface MessageServiceOption {
-    String getMessage(String fileName) throws Exception;
+    void showRulesMenu() throws Exception;
+    void showStartMessage() throws Exception;
+    void showEndMessage() throws Exception;
+    void showCommandsMessage() throws Exception;
+    void showCommandsInRuleMenuMessage() throws Exception;
 }

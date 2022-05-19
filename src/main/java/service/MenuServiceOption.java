@@ -1,7 +1,9 @@
 package service;
 
+import java.io.IOException;
+
 public interface MenuServiceOption {
-    void startGame(int command);
+    void startGame(int command) throws IOException;
 
     void endGame(int command) throws Exception;
 

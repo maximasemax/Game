@@ -1,11 +1,11 @@
-package model;
+package model.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-
+import model.PersonConfigurationOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonConfiguration implements PersonConfigurationOption{
+public class PersonConfiguration implements PersonConfigurationOption {
 
     private String name;
     private  List<Person> persons;
@@ -24,10 +24,13 @@ public class PersonConfiguration implements PersonConfigurationOption{
 
     @Override
     public String toString() {
-        return "PersoneConfiguration{" +
-                "name='" + name + '\'' +
-                ", persons=" + persons +
-                '}';
+        return "PersoneConfiguration{"
+                + "name='"
+                + name
+                + '\''
+                + ", persons="
+                + persons
+                + '}';
     }
 
     public String getName() {

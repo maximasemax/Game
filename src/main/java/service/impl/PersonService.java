@@ -1,9 +1,10 @@
-package service;
+package service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import model.Person;
-import model.PersonConfiguration;
+import model.impl.Person;
+import model.impl.PersonConfiguration;
+import service.PersonServiceOption;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class PersonService implements PersonServiceOption {
     @Override
     public List<Person> getPersons() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
-        PersonConfiguration personConfiguration = objectMapper.readValue(new File("src\\\\\\\\main\\\\\\\\resources\\\\\\\\persons.yml"), PersonConfiguration.class);
+        PersonConfiguration personConfiguration = objectMapper.readValue(new File("src\\main\\resources\\persons.yml"), PersonConfiguration.class);
         return personConfiguration.getPersons();
     }
 

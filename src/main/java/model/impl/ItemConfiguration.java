@@ -1,11 +1,11 @@
-package model;
+package model.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-
+import model.ItemConfigurationOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemConfiguration implements ItemConfigurationOption{
+public class ItemConfiguration implements ItemConfigurationOption {
 
     private String name;
     private List<Item> items;

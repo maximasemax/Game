@@ -1,4 +1,6 @@
-package service;
+package service.impl;
+
+import service.MessageServiceOption;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;

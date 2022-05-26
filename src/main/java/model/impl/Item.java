@@ -1,4 +1,4 @@
-package model;
+package model.impl;
 
 public class Item {
     public String name;

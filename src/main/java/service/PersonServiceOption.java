@@ -1,6 +1,6 @@
 package service;
 
-import model.Person;
+import model.impl.Person;
 
 import java.io.IOException;
 import java.util.List;

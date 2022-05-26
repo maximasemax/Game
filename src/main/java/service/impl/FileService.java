@@ -1,9 +1,9 @@
-package service;
+package service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import model.Person;
+import model.impl.Person;
 
 import java.io.IOException;
 

@@ -12,4 +12,8 @@ public interface PersonServiceOption {
     List<Person> getPersons() throws IOException;
     Person chosePerson() throws IOException;
 
+    Person chosePersonBot() throws IOException;
+
+
+
 }

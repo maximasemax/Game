@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PersonService implements PersonServiceOption {
@@ -45,5 +46,11 @@ public class PersonService implements PersonServiceOption {
         return null;
     }
 
+    @Override
+    public Person chosePersonBot() throws IOException {
+        Random random = new Random();
+        System.out.println("Персонаж выбран у бота!");
+        return getPersons().get(random.nextInt(getPersons().size()));
+    }
 
 }

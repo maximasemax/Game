@@ -9,16 +9,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ItemService implements ItemServiceOption {
 
-    Scanner scanner =new Scanner(System.in);
-
-
-
-
-
+    Scanner scanner = new Scanner(System.in);
 
 
     @Override
@@ -48,4 +44,13 @@ public class ItemService implements ItemServiceOption {
         System.out.println("Такого предмета нету(");
         return null;
     }
+
+    @Override
+    public Item choseItemBot() throws IOException {
+        Random random = new Random();
+        System.out.println("Предмет выбран у бота!");
+
+        return getItem().get(random.nextInt(getItem().size()));
+    }
+
 }

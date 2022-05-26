@@ -1,6 +1,7 @@
 package service;
 
-import model.Fight;
+import model.Item;
+import model.Person;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -24,7 +25,12 @@ public class MenuService implements MenuServiceOption {
             personService.chosePerson();
             ItemService itemService = new ItemService();
             itemService.choseItem();
-            Fight fight = new Fight();
+//            Fight fight = new Fight();
+            Person personBot = personService.chosePersonBot();
+            System.out.println(personBot);
+            Item itemBot = itemService.choseItemBot();
+            System.out.println(itemBot);
+
 //          fight.fight();
         }
     }
@@ -56,7 +62,7 @@ public class MenuService implements MenuServiceOption {
         int command = scanner.nextInt();
 
         try {
-            // —‰ÂÎ‡Ú¸ switch
+            // –°–¥–µ–ª–∞—Ç-—å switch
             ruleMenu(command);
             startGame(command);
             endGame(command);

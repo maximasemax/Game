@@ -1,4 +1,6 @@
+
 import service.MenuService;
+
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -21,7 +23,6 @@ public class Main {
 //        itemConfiguration.addItem(new Item("Sword", 5, 3));
 //        ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
 //        objectMapper.writeValue(new File("src\\\\\\\\main\\\\\\\\resources\\\\\\\\items.yml"), itemConfiguration);
-
 
     }
 }

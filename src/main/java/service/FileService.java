@@ -14,7 +14,7 @@ public class FileService {
         return null;
     }
 
-    private Person parsePerson(String fileName) throws JsonProcessingException {
+    public Person parsePerson(String fileName) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
         return objectMapper.readValue("src/main/resources/" + fileName, Person.class);
     }

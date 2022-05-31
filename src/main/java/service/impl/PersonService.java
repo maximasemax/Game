@@ -8,20 +8,30 @@ import service.PersonServiceOption;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
-import java.util.Locale;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class PersonService implements PersonServiceOption {
 
     Scanner scanner = new Scanner(System.in);
 
 
-
     @Override
     public void showAllPerson() throws IOException {
-        System.out.println(getPersons());
+        List<Person> personList = new ArrayList<>(getPersons());
+
+        StringBuilder stringBuilder = new StringBuilder();
+        int count = 0;
+        for (Person person : personList) {
+            count += 1;
+            stringBuilder.append(count + ". Name: " + person.getName());
+            stringBuilder.append("\n");
+            stringBuilder.append("Attack skill: " + person.getAttackSkill());
+            stringBuilder.append("\n");
+            stringBuilder.append("Defence skill: " + person.getDefenceSkill());
+            stringBuilder.append("\n");
+            stringBuilder.append("\n");
+        }
+        System.out.println(stringBuilder);
     }
 
     @Override
@@ -35,22 +45,17 @@ public class PersonService implements PersonServiceOption {
     public Person chosePerson() throws IOException {
         showAllPerson();
         System.out.println("Please chose person and write name.");
-        String nameOfPerson = scanner.nextLine().toLowerCase(Locale.ROOT);
-        List<Person> personList = getPersons();
-        for (Person person : personList) {
-            if (person.getName().toLowerCase(Locale.ROOT).equals(nameOfPerson)) {
-                System.out.println("Персонаж выбран!");
-                return person;
-            }
-        }
-        System.out.println("Такого персонажа нету(");
-        return null;
+        int numberOfPerson = scanner.nextInt();
+        List<Person> personList = new ArrayList<>(getPersons());
+        System.out.println("Person selected!\n");
+        return personList.get(numberOfPerson - 1);
+
     }
 
     @Override
     public Person chosePersonBot() throws IOException {
         Random random = new Random();
-        System.out.println("Персонаж выбран у бота!");
+        System.out.println("Bots chose!");
         return getPersons().get(random.nextInt(getPersons().size()));
     }
 

@@ -10,8 +10,8 @@ public interface ItemService {
 
     List<Item> getItem() throws IOException;
 
-    Item choseItem() throws IOException;
+    List<Item> choseItem() throws IOException;
 
 
-    Item choseItemBot() throws IOException;
+    List<Item> choseItemBot() throws IOException;
 }

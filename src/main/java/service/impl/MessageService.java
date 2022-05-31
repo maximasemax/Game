@@ -9,7 +9,6 @@ import java.nio.file.Paths;
 public class MessageService implements MessageServiceOption {
 
 
-
     private String getMessage(String fileName) throws Exception {
         return new String(Files.readAllBytes(Paths.get(fileName)));
     }
@@ -29,6 +28,7 @@ public class MessageService implements MessageServiceOption {
     public void showCommandsMessage() throws Exception {
         System.out.println(getMessage("src\\main\\resources\\Commands.txt"));
     }
+
     public void showCommandsInRuleMenuMessage() throws Exception {
         System.out.println(getMessage("src\\main\\resources\\CommandsInRule.txt"));
     }

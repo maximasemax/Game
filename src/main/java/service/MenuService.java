@@ -9,5 +9,5 @@ public interface MenuService {
 
     void ruleMenu(int command) throws Exception;
 
-    void exitGame() throws  Exception;
+    void exitGame() throws Exception;
 }

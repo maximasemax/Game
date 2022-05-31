@@ -21,7 +21,6 @@ public class MenuServiceImpl implements MenuService {
     public void startMenuService() throws Exception {
         messageService.showStartMessage();
         start();
-
     }
 
     @Override
@@ -50,6 +49,7 @@ public class MenuServiceImpl implements MenuService {
             }
             exitGame();
         }
+        //FIXME Поправить хп не должно быть отрицательным
     }
 
     @Override

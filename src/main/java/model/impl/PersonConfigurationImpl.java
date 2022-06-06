@@ -6,17 +6,17 @@ import model.PersonConfigurationOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonConfiguration implements PersonConfigurationOption {
+public class PersonConfigurationImpl implements PersonConfigurationOption {
 
     private String name;
     private List<Person> persons;
 
-    public PersonConfiguration(String name) {
+    public PersonConfigurationImpl(String name) {
         this.name = name;
         this.persons = new ArrayList<>();
     }
 
-    public PersonConfiguration() {
+    public PersonConfigurationImpl() {
     }
 
     public List<Person> getPersons() {

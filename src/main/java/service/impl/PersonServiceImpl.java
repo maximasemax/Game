@@ -3,14 +3,14 @@ package service.impl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import model.impl.Person;
-import model.impl.PersonConfiguration;
+import model.impl.PersonConfigurationImpl;
 import service.PersonServiceOption;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-public class PersonService implements PersonServiceOption {
+public class PersonServiceImpl implements PersonServiceOption {
 
     Scanner scanner = new Scanner(System.in);
 
@@ -37,7 +37,7 @@ public class PersonService implements PersonServiceOption {
     @Override
     public List<Person> getPersons() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
-        PersonConfiguration personConfiguration = objectMapper.readValue(new File("src\\main\\resources\\persons.yml"), PersonConfiguration.class);
+        PersonConfigurationImpl personConfiguration = objectMapper.readValue(new File("src\\main\\resources\\persons.yml"), PersonConfigurationImpl.class);
         return personConfiguration.getPersons();
     }
 

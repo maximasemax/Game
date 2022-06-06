@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 
-public class MessageService implements MessageServiceOption {
+public class MessageServiceImpl implements MessageServiceOption {
 
 
     private String getMessage(String fileName) throws Exception {

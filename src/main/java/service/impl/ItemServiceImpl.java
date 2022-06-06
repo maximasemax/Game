@@ -3,14 +3,14 @@ package service.impl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import model.impl.Item;
-import model.impl.ItemConfiguration;
-import service.ItemService;
+import model.impl.ItemConfigurationImpl;
+import service.ItemServiceOptional;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-public class ItemServiceImpl implements ItemService {
+public class ItemServiceImpl implements ItemServiceOptional {
 
     Scanner scanner = new Scanner(System.in);
 
@@ -37,7 +37,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public List<Item> getItem() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
-        ItemConfiguration itemConfiguration = objectMapper.readValue(new File("src\\main\\resources\\items.yml"), ItemConfiguration.class);
+        ItemConfigurationImpl itemConfiguration = objectMapper.readValue(new File("src\\main\\resources\\items.yml"), ItemConfigurationImpl.class);
         return itemConfiguration.getItems();
     }
 
@@ -54,7 +54,7 @@ public class ItemServiceImpl implements ItemService {
             itemsChose.add(itemList.get(nameOfItem - 1));
         }
         System.out.println("Items selected!");
-        return itemList;
+        return itemsChose;
     }
 
     @Override

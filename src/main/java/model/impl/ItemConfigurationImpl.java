@@ -6,17 +6,17 @@ import model.ItemConfigurationOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemConfiguration implements ItemConfigurationOption {
+public class ItemConfigurationImpl implements ItemConfigurationOption {
 
     private String name;
     private List<Item> items;
 
-    public ItemConfiguration(String name) {
+    public ItemConfigurationImpl(String name) {
         this.name = name;
         this.items = new ArrayList<>();
     }
 
-    public ItemConfiguration() {
+    public ItemConfigurationImpl() {
     }
 
     public String getName() {

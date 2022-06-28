@@ -5,7 +5,7 @@ import model.impl.Person;
 import java.io.IOException;
 import java.util.List;
 
-public interface PersonServiceOption {
+public interface PersonService {
 
     void showAllPerson() throws IOException;
 

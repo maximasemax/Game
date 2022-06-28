@@ -4,13 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import model.impl.Person;
 import model.impl.PersonConfigurationImpl;
-import service.PersonServiceOption;
+import service.PersonService;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-public class PersonServiceImpl implements PersonServiceOption {
+public class PersonServiceImpl implements PersonService {
 
     Scanner scanner = new Scanner(System.in);
 

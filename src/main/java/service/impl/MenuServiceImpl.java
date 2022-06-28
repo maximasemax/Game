@@ -1,10 +1,10 @@
 package service.impl;
 
-import model.Fight;
+import service.Fight;
 import model.impl.Item;
 import model.impl.Person;
-import service.MenuServiceOptional;
-import service.MessageServiceOption;
+import service.MenuService;
+import service.MessageService;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,9 +13,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class MenuServiceImpl implements MenuServiceOptional {
+public class MenuServiceImpl implements MenuService {
 
-    private final MessageServiceOption messageService = new MessageServiceImpl();
+    private final MessageService messageService = new MessageServiceImpl();
     private final Scanner scanner = new Scanner(System.in);
 
     public void startMenuService() throws Exception {

@@ -1,6 +1,6 @@
 package service;
 
-public interface MessageServiceOption {
+public interface MessageService {
     void showRulesMenu() throws Exception;
 
     void showStartMessage() throws Exception;

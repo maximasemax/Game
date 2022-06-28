@@ -2,7 +2,7 @@ package service;
 
 import java.io.IOException;
 
-public interface MenuServiceOptional {
+public interface MenuService {
     void startGame() throws IOException;
 
     void endGame() throws Exception;

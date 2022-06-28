@@ -1,9 +1,0 @@
-        List<model.impl.Person> persons = new ArrayList<>();
-        model.impl.Person bomg = new model.impl.Person("Bomgic", 100, 1, 2);
-        model.impl.Person king = new model.impl.Person("King", 100, 3, 4);
-        model.impl.Person bibobBoy = new model.impl.Person("Bibob Boy", 100, 1, 1);
-        persons.add(bibobBoy);
-        persons.add(bomg);
-        persons.add(king);
-        ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
-        objectMapper.writeValue(new File("src\\main\\resources\\persons.yaml"), persons);

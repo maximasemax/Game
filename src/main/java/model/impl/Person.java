@@ -1,5 +1,7 @@
 package model.impl;
 
+import java.util.Objects;
+
 public class Person {
     public String name;
     public float hp;
@@ -37,13 +39,6 @@ public class Person {
         this.name = name;
     }
 
-    public void setDefenceSkill(float defenceSkill) {
-        this.defenceSkill = defenceSkill;
-    }
-
-    public void setAttackSkill(float attackSkill) {
-        this.attackSkill = attackSkill;
-    }
 
     public String getName() {
         return name;
@@ -58,5 +53,19 @@ public class Person {
         stringBuilder.append(defenceSkill);
         stringBuilder.append("\n");
         return stringBuilder.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Float.compare(person.hp, hp) == 0 && Float.compare(person.attackSkill, attackSkill) == 0 &&
+                Float.compare(person.defenceSkill, defenceSkill) == 0 && Objects.equals(name, person.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, hp, attackSkill, defenceSkill);
     }
 }

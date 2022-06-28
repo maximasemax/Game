@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import model.impl.Person;
 
 
-public interface PersonConfigurationOption {
+public interface PersonConfiguration {
     void addPerson(Person person) throws JsonProcessingException;
 
 }

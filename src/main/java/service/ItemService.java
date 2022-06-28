@@ -5,7 +5,7 @@ import model.impl.Item;
 import java.io.IOException;
 import java.util.List;
 
-public interface ItemServiceOptional {
+public interface ItemService {
     void showAllItem() throws IOException;
 
     List<Item> getItem() throws IOException;

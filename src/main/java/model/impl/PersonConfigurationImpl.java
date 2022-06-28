@@ -1,12 +1,12 @@
 package model.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import model.PersonConfigurationOption;
+import model.PersonConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonConfigurationImpl implements PersonConfigurationOption {
+public class PersonConfigurationImpl implements PersonConfiguration {
 
     private String name;
     private List<Person> persons;

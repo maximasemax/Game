@@ -4,10 +4,13 @@ package service;
 import model.impl.Item;
 import model.impl.Person;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+
 public class Fight {
 
 
-    public void fight(Person person, Person personBot, Item item, Item itemBot) {
+    public void fight(Person person, Person personBot, Item item, Item itemBot) throws IOException, InterruptedException {
         float damageFromUser = 0;
         float damageFromBot = 0;
         float defenceUser = 0;

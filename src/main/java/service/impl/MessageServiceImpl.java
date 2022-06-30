@@ -1,6 +1,7 @@
 package service.impl;
 
 import service.MessageService;
+import service.Requests;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,7 +9,7 @@ import java.nio.file.Paths;
 
 public class MessageServiceImpl implements MessageService {
 
-    String way = "src\\main\\resources\\";
+    String way = "src\\main\\resources\\messeges\\";
 
     private String getMessage(String fileName) throws Exception {
         return new String(Files.readAllBytes(Paths.get(fileName)));

@@ -5,6 +5,7 @@ import model.impl.Item;
 import model.impl.Person;
 import service.MenuService;
 import service.MessageService;
+import service.Requests;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,13 +19,14 @@ public class MenuServiceImpl implements MenuService {
     private final MessageService messageService = new MessageServiceImpl();
     private final Scanner scanner = new Scanner(System.in);
 
+    @Override
     public void startMenuService() throws Exception {
         messageService.showStartMessage();
         start();
     }
 
     @Override
-    public void startGame() throws IOException {
+    public void startGame() throws IOException, InterruptedException {
         PersonServiceImpl personService = new PersonServiceImpl();
         Person personUser = personService.chosePerson();
         ItemServiceImpl itemServiceImpl = new ItemServiceImpl();
@@ -36,17 +38,20 @@ public class MenuServiceImpl implements MenuService {
             System.out.println(item.getName());
         }
         Fight fight = new Fight();
+        Requests requests = new Requests();
+        String personName = requests.mix();
+        String personBotName = requests.mix();
         while (personUser.getHp() > 0 && personBot.getHp() > 0) {
             fight.fight(personUser, personBot, itemChoseUser(itemsUser), itemChoseBot(itemBot));
             if (personUser.getHp() < 0) {
                 System.out.println("0 hp user\n");
             } else {
-                System.out.println(personUser.getHp() + "hp user\n");
+                System.out.println(personUser.getHp()  +" hp "+ personName+ " \n");
             }
             if (personBot.getHp() < 0) {
                 System.out.println("0 hp bot\n");
             } else {
-                System.out.println(personBot.getHp() + "hp bot\n");
+                System.out.println(personBot.getHp()  +" hp "+ personBotName + " \n");
             }
         }
         if (personUser.getHp() > 0) {
@@ -75,7 +80,7 @@ public class MenuServiceImpl implements MenuService {
     }
 
 
-    public void start() throws Exception {
+    private void start() throws Exception {
         messageService.showCommandsMessage();
         int command = scanner.nextInt();
         switch (command) {
@@ -93,7 +98,7 @@ public class MenuServiceImpl implements MenuService {
         }
     }
 
-    public void exitFromRuleMenu() throws Exception {
+    private void exitFromRuleMenu() throws Exception {
         messageService.showCommandsInRuleMenuMessage();
         int command = scanner.nextInt();
         switch (command) {

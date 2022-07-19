@@ -16,7 +16,9 @@ public class Requests {
     public Requests() throws MalformedURLException {
     }
 
-    private HttpResponse<String> response(String url) throws IOException, InterruptedException {
+    //TODO Сингтон повторить , разбирать входные данные как json
+
+    private HttpResponse<String> sendRequest(String url) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(String.valueOf(url)))
@@ -26,7 +28,7 @@ public class Requests {
     }
 
     private String requestsRandomAnimal() throws IOException, InterruptedException {
-        String animal = response(String.valueOf(urlForAnimal)).body();
+        String animal = sendRequest(String.valueOf(urlForAnimal)).body();
         char[] rezult = animal.toCharArray();
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 2; i < rezult.length-2; i++)
@@ -35,7 +37,7 @@ public class Requests {
     }
 
     private String requestsRandomAdjective() throws IOException, InterruptedException {
-        String animal = response(String.valueOf(urlForAdjective)).body();
+        String animal = sendRequest(String.valueOf(urlForAdjective)).body();
         char[] rezult = animal.toCharArray();
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 2; i < rezult.length-2; i++)
@@ -44,11 +46,7 @@ public class Requests {
     }
 
     public String mix() throws IOException, InterruptedException {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(requestsRandomAdjective());
-        stringBuilder.append(" ");
-        stringBuilder.append(requestsRandomAnimal());
-        return stringBuilder.toString();
+        return String.format("%s %s", requestsRandomAdjective(), requestsRandomAnimal());
     }
 
 }
